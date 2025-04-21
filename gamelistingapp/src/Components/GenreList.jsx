@@ -11,13 +11,13 @@ function GenreList() {
     },[])
     const getGenreList =()=> {
       GlobalApi.getGenreList.then((resp) => {
-        console.log(resp.data.results);
+        console.log(resp.data);
         setGenreList(resp.data.results);
       })
     }
   return (
     <div>
-      <h2 className='text-[30px] font-bold dark:text-grey'>Genre</h2>
+      <h2 className='text-[30px] font-bold dark:text-white'>Genre</h2>
       {GenreList.map((item,index)=>(
 
           <div

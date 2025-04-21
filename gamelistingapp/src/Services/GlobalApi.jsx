@@ -5,9 +5,7 @@ const axiosCreate=axios.create({
     baseURL: 'https://api.rawg.io/api'
 })
 
-//getting the genre list from Api
 const getGenreList=axiosCreate.get('/genres?key='+key);
-//getting all the games from Api.
 const getAllGames=axiosCreate.get('/games?+key='+key);
 export default{
     getGenreList,

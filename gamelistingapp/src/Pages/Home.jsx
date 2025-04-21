@@ -11,20 +11,20 @@ function Home() {
 
 const getAllGamesList=()=>{
   GlobalApi.getAllGames.then((resp)=>{
-    
     setAllGameList(resp.data.results)
   })
 }
-
   return (
     <div className='grid grid-cols-4 px-5'>
         <div className='hidden md:block'>
-          <GenreList></GenreList>
-          </div>
-        
+          <GenreList/>
+        </div>
         <div className='col-span-4 md:col-span-3'>
           {allGameList?.lenght>0?
-           <Banner gameBanner={allGameList[0]}></Banner>
+          <div>
+           <Banner gameBanner={allGameList[0]} />
+           <tradingGames/>
+          </div>
            :null}
         </div>
     </div>
