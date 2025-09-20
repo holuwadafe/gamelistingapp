@@ -8,13 +8,14 @@ function App() {
   const [count,setCount] = useState(0)
   const [theme,setTheme] = useState('dark')
   useEffect(()=> {
-    setTheme(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'dark')
+    const savedTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'dark'
+    setTheme(savedTheme)
+    // Apply theme class to document body
+    document.body.className = savedTheme
   },[])
   return (  
     <ThemeContext.Provider value={{theme,setTheme}}>
-    <div className= {`${theme}
-    ${theme === 'dark' ? 'bg-[#121212]' : null} min-h[100vh]`}
-    >
+    <div className={`${theme} ${theme === 'dark' ? 'bg-[#121212]' : 'bg-white'} min-h-screen w-full`}>
         <Header/>
         <Home/>
     </div>
